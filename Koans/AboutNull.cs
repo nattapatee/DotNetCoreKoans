@@ -8,7 +8,7 @@ namespace DotNetCoreKoans.Koans
         [Step(1)]
         public void NullIsNotAnObject()
         {
-            Assert.True(null is object);
+            Assert.False(null is object,null);
 
             // The `is` operator returns false if the object (first parameter)
             // is null, no matter what the type (second parameter) is.
@@ -20,18 +20,20 @@ namespace DotNetCoreKoans.Koans
             //What is the Exception that is thrown when you call a method on a null object?
             //Don't be confused by the code below. It is using Anonymous Delegates which we will
             //cover later on. 
-            object nothing = null;
-            Assert.Throws(typeof(FillMeIn), delegate() { nothing.ToString(); });
 
+            object nothing = null;
+            Assert.Throws(typeof(System.NullReferenceException), delegate() { nothing.ToString(); });
+         
             //What's the message of the exception? What substring or pattern could you test
             //against in order to have a good idea of what the string is?
+
             try
             {
                 nothing.ToString();
             }
-            catch (System.Exception ex)
+            catch (System.NullReferenceException ex)
             {
-                Assert.Contains(FILL_ME_IN as string, ex.Message);
+                Assert.Contains("Object" as string, ex.Message);
             }
         }
 
@@ -39,21 +41,21 @@ namespace DotNetCoreKoans.Koans
         public void CheckingThatAnObjectIsNull()
         {
             object obj = null;
-            Assert.True(obj == FILL_ME_IN);
+            Assert.True(obj == null);
         }
 
         [Step(4)]
         public void ABetterWayToCheckThatAnObjectIsNull()
         {
             object obj = null;
-            Assert.Null(FILL_ME_IN);
+            Assert.Null(obj);
         }
 
         [Step(5)]
         public void AWayNotToCheckThatAnObjectIsNull()
         {
             object obj = null;
-            Assert.True(obj.Equals(null));
+            Assert.False(obj != null);
         }
     }
 }

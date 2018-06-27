@@ -40,7 +40,7 @@ namespace DotNetCoreKoans.Koans
         [Step(1)]
         public void ExtensionMethodsShowUpInTheCurrentClass()
         {
-            Assert.Equal(FILL_ME_IN, this.HelloWorld());
+            Assert.Equal(FILL_ME_IN, this.HelloWorld(),"error");
         }
 
         [Step(2)]
