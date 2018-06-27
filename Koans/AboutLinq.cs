@@ -38,7 +38,7 @@ namespace DotNetCoreKoans.Koans
                 select n;
 
             // 3. Query execution.
-            Assert.Equal(FILL_ME_IN, lowNums.Count());
+            Assert.Equal(1, lowNums.Count());
         }
 
         [Step(2)]
@@ -52,7 +52,7 @@ namespace DotNetCoreKoans.Koans
                  orderby cust ascending //You can also use descending here for reverse order.
                  select cust;
 
-            Assert.Equal(FILL_ME_IN, customers[0]);
+            Assert.Equal("John", customers[0]);
         }
 
         [Step(3)]
@@ -64,7 +64,7 @@ namespace DotNetCoreKoans.Koans
              //Get just the 3 first numbers.
             var first3Numbers = numbers.Take(3);
 
-            Assert.Equal(FILL_ME_IN, first3Numbers.Count());
+            Assert.Equal(3, first3Numbers.Count());
         }
 
         [Step(4)]
@@ -73,7 +73,7 @@ namespace DotNetCoreKoans.Koans
             string[] words = { "believe", "relief", "receipt", "field" };
 
             bool iAfterE = words.Any(w => w.Contains("ei")); //Check if any of your words contain 'ei'
-            Assert.Equal(FILL_ME_IN, iAfterE);
+            Assert.Equal(true, iAfterE);
         }
     }
 }

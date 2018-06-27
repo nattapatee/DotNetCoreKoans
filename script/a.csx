@@ -1,8 +1,10 @@
-Console.WriteLine("Hello");
 
 
 
-             var f = 0.3f + 0.6f;
-            Console.WriteLine(f);
 
-        
+        Console.WriteLine("wow");
+
+       int x = 9 | 15; //19
+        Console.WriteLine(x);
+
+

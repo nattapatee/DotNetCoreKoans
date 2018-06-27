@@ -49,8 +49,8 @@ namespace DotNetCoreKoans.Koans
         [Step(5)]
         public void FloatsHaveLimitedMaximumAndMinimumValues()
         {
-            Assert.Equal(3.40282347E+38f, 3.40282347E+38f);
-            Assert.Equal(-3.40282347E+38f, -3.40282347E+38f);
+            Assert.Equal(float.MaxValue, 3.40282347E+38f);
+            Assert.Equal(float.MinValue, -3.40282347E+38f);
         }
 
         [Step(6)]
